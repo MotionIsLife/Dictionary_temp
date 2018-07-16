@@ -34,6 +34,8 @@ public class JpaConfig {
   private static final String PROP_HIBERNATE_SHOW_SQL = "db.hibernate.show_sql";
   private static final String PROP_HIBERNATE_HBM2DDL_AUTO = "db.hibernate.hbm2ddl.auto";
   private static final String PROP_HIBERNATE_FORMAT_SQL = "db.hibernate.format_sql";
+  private static final String PROP_HIBERNATE_H2_CONSOLE_ENABLED = "spring.h2.console.enabled";
+  private static final String PROP_HIBERNATE_CONSOLE_PATH = "spring.h2.console.path";
 
 
   @Bean
@@ -60,6 +62,8 @@ public class JpaConfig {
     properties.put("hibernate.dialect", env.getRequiredProperty(PROP_HIBERNATE_DIALECT));
     properties.put("hibernate.show_sql", env.getRequiredProperty(PROP_HIBERNATE_SHOW_SQL));
     properties.put("hibernate.hbm2ddl.auto", env.getRequiredProperty(PROP_HIBERNATE_HBM2DDL_AUTO));
+    properties.put("spring.h2.console.enabled", env.getRequiredProperty(PROP_HIBERNATE_H2_CONSOLE_ENABLED));
+    properties.put("spring.h2.console.path", env.getRequiredProperty(PROP_HIBERNATE_CONSOLE_PATH));
     /*properties.put("hibernate.format_sql", env.getRequiredProperty(PROP_HIBERNATE_FORMAT_SQL));*/
     return properties;
   }
